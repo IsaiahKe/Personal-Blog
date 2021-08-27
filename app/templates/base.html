@@ -1,0 +1,10 @@
+{% extends 'bootstrap/base.html'%}
+
+{%if title%}
+<title>{{title}}</title>
+%else%}
+<title>Processing</title>
+{%endif%}
+{%block navbar%}
+{% include "navigation.html"%}
+{% endblock %}
