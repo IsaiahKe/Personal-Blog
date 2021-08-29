@@ -1,0 +1,28 @@
+{% extends 'bootstrap/base.html' %}
+{% import "macros.html" as macro %}
+
+<title>{{title}}</title>
+
+{% block content %}
+<div class="container">
+
+    <div class="col-md">
+        {%if post%}
+        <h2>My Posts</h2>
+        {{macro.displayMyPosts(post)}}
+        {%else%}
+        <div class="container">
+            <div class="card">
+                <div class="col-md-4"><span style="color:red">No Written Posts</span></div>
+    
+            </div>
+        </div>
+        {%endif%}
+        </div>
+</div>
+
+
+</div>
+{% endblock %}
+
+
