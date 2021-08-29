@@ -43,6 +43,7 @@ class Subscribe(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     username= db.Column(db.String(20),nullable=False)
     email=db.Column(db.String(50),nullable=False)
+    postid=db.Column(db.Integer,nullable=False)
     
     def __repr__(self):
         return f'Subscribe{self.email}'
