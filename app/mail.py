@@ -4,6 +4,7 @@ from . import mail
 
 subject_pref = 'My Blog'
 sender_email  ='izzieapptest@gmail.com'
+
 def sendmail(subject,template,to,**kwargs): 
     sender_email='izzieapptest@gmail.com'
     
