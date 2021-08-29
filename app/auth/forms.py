@@ -40,10 +40,17 @@ class CommentForm(FlaskForm):
     comment=TextAreaField("Comment",validators=[Required()])
     submit=SubmitField('Send')
 class SubscriberForm(FlaskForm):
-    email = StringField('Enter your valid email address.',validators = [Required()])
+    email = StringField('Enter your email address.',validators = [Required()])
     username = StringField('Username', validators = [Required()])
     submit = SubmitField('Subscribe')
 
     def validate_email(self,data_field):
         if Subscribe.query.filter_by(email = data_field.data).first():
-            raise ValidationError('Your data already exists') 
+            raise ValidationError('You are already subscribed to another post') 
+class PostUpdate(FlaskForm):
+    content=TextAreaField('Content',validators=[Required()])
+    update=SubmitField('Update')
+
+class TitleUpdate(FlaskForm):
+    title=TextField('Title',validators=[Required()])
+    update=SubmitField('Update')
