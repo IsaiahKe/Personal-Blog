@@ -5,15 +5,30 @@
 {%if title%}
 <title>{{title}}</title>
 {%else%}
-<title>Processing..</title>
+<title>Processing</title>
 {%endif%}
 
 
 
 {% block content %}
-<h1>Comments on Post</h1>
-<div class="col-md-8" >
-    {{macro.displayComment(item)}}
+<div class="container">
+    <h1>Comments on Post</h1>
+</div>
+<div class="container">
+    <div class="col-md-8">
+       <h3>
+        {{postitem.content}}
+       </h3>
+    </div>
+    <div class="row">
+        <div class="col-md-6" > 
+            <p><b><u><button class="btn btn-danger btn-lg" style="color:#fff"><a href="/subscribe/{{postitem.id}}">Subscribe</a></button></u></b></p>
+          </div> 
+    </div>
+</div>
+<div class="container">
+    <div class="col-md-8" >
+        {{macro.displayComment(item)}}
 </div>
 <div class="container" style="margin:0px auto;">
     <div class="col-md-6">
